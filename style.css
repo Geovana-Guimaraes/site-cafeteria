@@ -1,498 +1,119 @@
-:root {
-    --main-color: #b8864e;
-    --black: #13131a;
-    --bg: #010103;
-    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
-    font-size: 10px;
-}
-
-*,
-*::before,
-*::after {
+/* Reset padrão para limpar as margens do navegador */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    transition: 0.2s linear;
-    font-family: "Roboto", sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg);
+    /* ADICIONADO: Foto de fundo do castelo */
+    background-image: url('https://images.universoformulas.com.br/wp-content/uploads/2021/04/hogwarts-castle-wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* O fundo não rola junto com a página */
+    background-repeat: no-repeat;
+
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    padding: 20px;
+    position: relative;
+    /* Necessário para a camada escura */
+    min-height: 100vh;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
-section {
-    padding: 3rem 2rem;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.header {
+/* ADICIONADO: Camada escura por cima do fundo */
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 99;
-    border-bottom: var(--border);
-    background-color: var(--bg);
-}
-
-.header section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-}
-
-.logo img {
-    height: 4rem;
-    width: auto;
-}
-
-
-.navbar a {
-    margin: 0 1rem;
-    font-size: 1.8rem;
-    color: #fff;
-}
-
-.navbar a:hover {
-    color: var(--main-color);
-    border-bottom: 0.15rem solid var(--main-color);
-    padding-bottom: 0.4rem;
-}
-
-.icons {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-}
-
-.icon-search {
-    cursor: pointer;
-    opacity: 0.8;
-    transition: opacity 0.2s ease;
-}
-
-.icon-search:hover {
-    opacity: 1;
-}
-
-.icon-cart {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    background: transparent;
-    border: 0.1rem solid rgba(255, 255, 255, 0.25);
-    border-radius: 0.4rem;
-    padding: 0.6rem 1.4rem;
-    cursor: pointer;
-    color: #fff;
-    font-size: 1.5rem;
-    white-space: nowrap;
-    transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.icon-cart img {
-    display: block;
-    flex-shrink: 0;
-}
-
-.icon-cart:hover {
-    background: var(--main-color);
-    border-color: var(--main-color);
-}
-
-.cart-count {
-    background: var(--main-color);
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 700;
-    min-width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-}
-
-.icon-cart:hover .cart-count {
-    background: #fff;
-    color: var(--main-color);
-}
-
-.btn {
-    background: var(--main-color);
-    color: #fff;
-    padding: 1rem 3rem;
-    font-size: 1.7rem;
-    cursor: pointer;
-    margin-top: 1rem;
-    display: inline-block;
-    text-transform: capitalize;
-}
-
-.btn:hover {
-    opacity: 0.8;
-}
-
-.home-container {
-    background: url("./img/home-img.jpg");
-    min-height: 100vh;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.home-container section {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    padding-top: 8rem;
-    padding-bottom: 4rem;
-}
-
-.hero-text {
-    flex: 1;
-    max-width: 52rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-}
-
-.hero-tag {
-    display: inline-block;
-    font-size: 1.3rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--main-color);
-    border: 0.1rem solid var(--main-color);
-    padding: 0.4rem 1.2rem;
-    border-radius: 2rem;
-    width: fit-content;
-}
-
-.hero-text h3 {
-    color: #fff;
-    font-size: 4.8rem;
-    text-transform: uppercase;
-    line-height: 1.2;
-}
-
-.hero-text p {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 1.7rem;
-    font-weight: 300;
-    line-height: 1.8;
-}
-
-.hero-text .btn {
-    margin-top: 0.4rem;
-    width: fit-content;
-}
-
-
-.content {
-    max-width: 60rem;
-}
-
-.content h3 {
-    color: #fff;
-    font-size: 6rem;
-    text-transform: uppercase;
-}
-
-.content p {
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 1.8;
-    padding: 1rem 0;
-}
-
-.title {
-    font-size: 4rem;
-    font-weight: 300;
-    color: var(--main-color);
-    text-align: center;
-    margin-bottom: 4rem;
-    letter-spacing: 0.02em;
-}
-
-.title span {
-    color: #fff;
-}
-
-.about .row {
-    display: flex;
-    align-items: center;
-    background-color: var(--black);
-    gap: 1.5rem;
-}
-
-.about .row .container-image {
-    flex-shrink: 0;
-    width: 45%;
-    overflow: hidden;
-}
-
-.about .row .container-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Preto com transparência */
+    z-index: 1;
+    /* Fica atrás de tudo, mas na frente do fundo */
 }
 
-.about .row .content {
-    padding: 2rem;
+header,
+main {
+    position: relative;
+    /* Fica na frente da camada escura */
+    z-index: 2;
 }
 
-.about .row .content h3 {
-    font-size: 3rem;
-    color: var(--main-color);
-    text-transform: uppercase;
-}
-
-.about .row .content p {
-    font-size: 1.6rem;
-    color: #fff;
-    padding: 1rem 0;
-    line-height: 1.8;
-}
-
-.box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.5rem;
-}
-
-.menu .box-container .box {
-    border: var(--border);
-    padding: 4rem 3rem;
+header {
     text-align: center;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 40px;
 }
 
-.menu .box-container .box img {
-    height: 10rem;
-    width: auto;
-    object-fit: contain;
+h1 {
+    color: #f3c623;
+    /* Amarelo ouro do Harry Potter */
+    font-size: 2.5rem;
+}
+
+/* Organização dos cards em uma grade organizada */
+#characters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Aumentei o tamanho mínimo para caber a descrição */
+    gap: 25px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.menu .box-container .box h3 {
-    font-size: 2rem;
-    color: #fff;
-    padding: 1rem 0;
-    text-transform: capitalize;
-}
-
-.menu .box-container .box .price {
-    font-size: 2.5rem;
-    color: #fff;
-    padding: 0.5rem 0;
-}
-
-.menu .box-container .box .price span {
-    color: var(--main-color);
-    font-size: 1.5rem;
-    text-decoration: line-through;
-    font-weight: 300;
-}
-
-.menu .box-container .box:hover {
-    background-color: #1e1a14;
-    border-color: var(--main-color);
-}
-
-.review .box-container .box {
-    border: var(--border);
-    padding: 3rem 2rem;
+/* Estilo do Card individual */
+.card {
+    background-color: rgba(38, 38, 38, 0.9);
+    /* Ligeiramente transparente */
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 15px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    /* Organiza os itens de cima para baixo */
 }
 
-.review .box-container .box .user {
-    height: 7rem;
-    width: 7rem;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 0.2rem solid var(--main-color);
+/* Efeito visual simples quando passa o mouse por cima */
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #f3c623;
 }
 
-.review .box-container .box .stars {
-    font-size: 2rem;
-    color: var(--main-color);
-    letter-spacing: 0.2rem;
-}
-
-.review .box-container .box h3 {
-    font-size: 2rem;
-    color: #fff;
-    text-transform: capitalize;
-}
-
-.review .box-container .box p {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.8;
-    font-style: italic;
-}
-
-.address section {
-    max-width: 1200px;
-}
-
-.address iframe {
+/* Imagem ajustada para não quebrar o layout */
+.card img {
     width: 100%;
-    height: 40rem;
-    margin-bottom: 3rem;
-    border-radius: 0.5rem;
-    display: block;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #111;
 }
 
-.address .box-container .box {
-    border: var(--border);
-    padding: 3rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
+.card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #ffffff;
 }
 
-.address-icon {
-    font-size: 3.5rem;
-    line-height: 1;
+.card .casa {
+    font-size: 1rem;
+    color: #f3c623;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.address .box-container .box h3 {
-    font-size: 2rem;
-    color: var(--main-color);
-    text-transform: capitalize;
-}
-
-.address .box-container .box p,
-.address .box-container .box a {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.8;
-}
-
-.address .box-container .box a:hover {
-    color: var(--main-color);
-}
-
-.footer {
-    background-color: var(--black);
-    border-top: var(--border);
-    padding: 2rem;
-    text-align: center;
-}
-
-.footer p {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.footer a {
-    color: var(--main-color);
-    font-weight: 500;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 991px) {
-    html {
-        font-size: 55%;
-    }
-
-    section {
-        padding: 2rem;
-    }
-
-    .about .row {
-        flex-direction: column;
-    }
-
-    .about .row .container-image {
-        width: 100%;
-    }
-
-    .about .row .content {
-        padding: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-toggle__label {
-        display: flex;
-    }
-
-    .navbar {
-        display: none;
-    }
-
-    .home-container section {
-        justify-content: center;
-        text-align: center;
-        padding-top: 10rem;
-    }
-
-    .hero-text {
-        align-items: center;
-        max-width: 100%;
-    }
-
-    .hero-text h3 {
-        font-size: 3.6rem;
-    }
-
-    .box-container {
-        grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-    }
-}
-
-@media (max-width: 450px) {
-    html {
-        font-size: 50%;
-    }
-
-    .hero-text h3 {
-        font-size: 3.2rem;
-    }
-
-    .hero-tag {
-        font-size: 1.1rem;
-    }
-
-    .box-container {
-        grid-template-columns: 1fr;
-    }
-
-    .address iframe {
-        height: 28rem;
-    }
+/* ADICIONADO: Estilo para a descrição */
+.card p:not(.casa) {
+    font-size: 0.9rem;
+    color: #cccccc;
+    line-height: 1.4;
+    font-style: italic;
+    margin-top: auto;
+    /* Empurra a descrição para o final se houver espaço */
+    padding-top: 10px;
 }

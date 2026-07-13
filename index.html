@@ -4,24 +4,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudantes de Hogwarts - Perfil</title>
+    <meta name="description" content="Ponto do Grão — A melhor cafeteria da região. Grãos selecionados, ambiente acolhedor.">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Ponto do Grão</title>
 </head>
 
 <body>
 
-    <div class="overlay"></div> <!-- Camada escura para o texto não sumir -->
+    <header class="header">
+        <section>
+            <a href="#home" class="logo">
+                <img src="./img/cafe.png" alt="Logo Ponto do Grão">
+            </a>
 
-    <header>
-        <h1>⚡ Lista de Estudantes de Hogwarts ⚡</h1>
+            <nav class="navbar" aria-label="Navegação principal">
+                <a href="#home">Home</a>
+                <a href="#about">Sobre</a>
+                <a href="#menu">Menu</a>
+                <a href="#review">Avaliações</a>
+                <a href="#address">Endereço</a>
+            </nav>
+
+            <div class="icons">
+                <img src="https://img.icons8.com/ios-filled/30/ffffff/search--v1.png" alt="buscar" width="22" height="22" class="icon-search">
+                <button class="icon-cart" aria-label="Carrinho de compras">
+                    <img src="https://img.icons8.com/ios/30/ffffff/shopping-cart--v1.png" alt="" width="22" height="22">
+                    <span>Carrinho</span>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </section>
     </header>
 
-    <main>
-        <!-- O JavaScript vai colocar os cards aqui dentro -->
-        <div id="characters-container"></div>
-    </main>
+    <div class="home-container" id="home">
+        <section>
+            <div class="hero-text">
+                <span class="hero-tag">Cafeteria artesanal</span>
+                <h3>O melhor café<br>da região</h3>
+                <p>Grãos selecionados, preparo artesanal e um ambiente feito para você desacelerar e aproveitar cada gole.</p>
+                <a href="#menu" class="btn">Ver cardápio</a>
+            </div>
+        </section>
+    </div>
 
-    <script src="script.js"></script>
+    <section class="about" id="about">
+        <h2 class="title">Sobre <span>nós</span></h2>
+        <div class="row">
+            <div class="container-image">
+                <img src="./img/about-img.jpg" alt="Interior da cafeteria Ponto do Grão">
+            </div>
+            <div class="content">
+                <h3>Café por tradição</h3>
+                <p>Há anos servindo o que há de melhor em cada xícara. Grãos escolhidos a dedo, preparo com respeito ao tempo certo e um ambiente que acolhe como em casa — porque bom café é herança, não pressa.</p>
+                <a href="#menu" class="btn">Saiba mais</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <h2 class="title">O que <span>servimos</span></h2>
+        <div class="box-container">
+
+            <div class="box">
+                <img src="./img/menu-1.png" alt="Café coado">
+                <h3>Café coado</h3>
+                <div class="price">R$ 15,99 <span>R$ 20,99</span></div>
+                <a href="#" class="btn">Adicione ao carrinho</a>
+            </div>
+
+            <div class="box">
+                <img src="./img/menu-3.png" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <div class="price">R$ 15,99 <span>R$ 20,99</span></div>
+                <a href="#" class="btn">Adicione ao carrinho</a>
+            </div>
+
+            <div class="box">
+                <img src="./img/menu-4.png" alt="Café com leite">
+                <h3>Café com leite</h3>
+                <div class="price">R$ 10,00 <span>R$ 15,00</span></div>
+                <a href="#" class="btn">Adicione ao carrinho</a>
+            </div>
+
+            <div class="box">
+                <img src="./img/menu-5.png" alt="Café de máquina">
+                <h3>Café de máquina</h3>
+                <div class="price">R$ 13,99 <span>R$ 15,22</span></div>
+                <a href="#" class="btn">Adicione ao carrinho</a>
+            </div>
+
+            <div class="box">
+                <img src="./img/menu-6.png" alt="Café espresso">
+                <h3>Café espresso</h3>
+                <div class="price">R$ 12,00 <span>R$ 15,99</span></div>
+                <a href="#" class="btn">Adicione ao carrinho</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="review" id="review">
+        <h2 class="title">O que <span>dizem de nós</span></h2>
+        <div class="box-container">
+
+            <div class="box">
+                <img src="./img/pic-1.png" alt="João Silva" class="user">
+                <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                <h3>João Silva</h3>
+                <p>"O café é simplesmente incrível! O aroma e o sabor são incomparáveis. Recomendo a todos os amantes de café."</p>
+            </div>
+
+            <div class="box">
+                <img src="./img/pic-2.png" alt="Maria Oliveira" class="user">
+                <div class="stars" aria-label="4 de 5 estrelas">★★★★☆</div>
+                <h3>Maria Oliveira</h3>
+                <p>"Adoro o ambiente acolhedor da cafeteria. É o lugar perfeito para relaxar e desfrutar de um bom café."</p>
+            </div>
+
+            <div class="box">
+                <img src="./img/pic-3.png" alt="Carlos Santos" class="user">
+                <div class="stars" aria-label="3 de 5 estrelas">★★★☆☆</div>
+                <h3>Carlos Santos</h3>
+                <p>"A equipe é muito atenciosa e o serviço é excelente. Sempre saio satisfeito com minha visita."</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="address" id="address">
+        <h2 class="title">Onde <span>nos encontrar</span></h2>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58818.391431126314!2d-47.17686040838222!3d-22.87093645877658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c9f8b5cb57c7%3A0xf5e6594e1191a2f1!2sCaf%C3%A9%20Conceito%20Dom%20Olivio%20Campinas!5e0!3m2!1spt-BR!2sbr!4v1783119474456!5m2!1spt-BR!2sbr"
+            title="Localização da Cafeteria Ponto do Grão"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+
+        <div class="box-container">
+            <div class="box">
+                <div class="address-icon">📍</div>
+                <h3>Nosso endereço</h3>
+                <p>Rua das Flores, 123 - Centro, Cidade Exemplo - Estado</p>
+            </div>
+            <div class="box">
+                <div class="address-icon">📞</div>
+                <h3>Nosso telefone</h3>
+                <p><a href="tel:+551112345678">(11) 1234-5678</a></p>
+            </div>
+            <div class="box">
+                <div class="address-icon">✉️</div>
+                <h3>Nosso e-mail</h3>
+                <p><a href="mailto:contato@pontodograo.com.br">contato@pontodograo.com.br</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Construído por <a href="https://github.com/Geovana-Guimaraes" target="_blank" rel="noopener noreferrer">Geovana Guimarães</a></p>
+    </footer>
+
 </body>
 
 </html>
